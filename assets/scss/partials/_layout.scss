@@ -1,0 +1,249 @@
+/* Box Sizing
+--------------------------------------------- */
+
+html,
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Wrap
+--------------------------------------------- */
+
+.wrap {
+  max-width: map-get( $breakpoints, 'desktop' );
+  margin: 0 auto;
+  padding-left:  ($grid-gap / 2);
+  padding-right: ($grid-gap / 2);
+  @include clearfix;
+}
+
+.single-project,
+.page-template-default {
+  .site-inner {
+    padding: 20px 0;
+    @include media(">=tablet") {
+      padding: 40px 0;
+    }
+
+    & > .wrap {
+      max-width: map-get( $breakpoints, 'content-width' );
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.entry-content {
+  a {
+    color: $maroonpop;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(80, 0, 0, 0.75);
+
+    &:hover,
+    &:active,
+    &:focus {
+      // color: #333;
+      color: $maroonpop;
+      border-bottom: none;
+    }
+  }
+}
+
+.page-template:not(.home-template-front-page),
+.single {
+  .content-area {
+    padding: 20px 0;
+  }
+}
+
+// OR................
+// USE THIS instead of ABOVE
+
+// .single {
+  // .content-area
+// }
+
+.page-template-landing,
+.single-project {
+  .site-inner {
+    padding: 0;
+
+    > .wrap {
+      max-width: 100%;
+    }
+  }
+
+  .content-area {
+    max-width: $content-width;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+
+  .type-page {
+    margin: 0 20px 20px;
+  }
+}
+/*
+.type-page {
+  max-width: $grid-width;
+  margin: auto;
+}
+*/
+
+.home-template-front-page .type-page {
+  max-width: 100%;
+  padding: 0;
+  margin: auto;
+}
+
+.featured-project {
+  .type-page {
+    margin: auto;
+  }
+}
+
+/* Screen Reader Text
+--------------------------------------------- */
+
+.genesis-skip-link {
+  display: none;
+}
+
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus  {
+  clip: auto !important;
+  height: auto;
+  width: auto;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 15px 23px 14px;
+  color: #333;
+  background: #fff;
+  z-index: 100000; /* Above WP toolbar. */
+  text-decoration: none;
+  box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+}
+
+/* Sidebar Layouts
+--------------------------------------------- */
+
+@include media("<medium") {
+  .sidebar-primary {
+    // display: none;
+  }
+}
+
+@include media(">=medium") {
+  .sidebar-content,
+  .content-sidebar {
+    .site-main {
+      float: left;
+      width: 768px / 1168px * 100%;
+    }
+
+    .sidebar-primary {
+      float: right;
+      width: 335px / 1168px * 100%;
+    }
+  }
+
+  .sidebar-content .site-main {
+    float: right;
+  }
+
+  .sidebar-content .sidebar-primary {
+    float: left;
+  }
+}
+
+/* Column Classes
+    Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css
+--------------------------------------------- */
+@include media('>=mobile_menu') {
+  .five-sixths,
+  .four-sixths,
+  .one-fourth,
+  .one-half,
+  .one-sixth,
+  .one-third,
+  .three-fourths,
+  .three-sixths,
+  .two-fourths,
+  .two-sixths,
+  .two-thirds {
+    float: left;
+    margin-left: 2.564102564102564%;
+  }
+
+  .one-half,
+  .three-sixths,
+  .two-fourths {
+    width: 48.717948717948715%;
+  }
+
+  .one-third,
+  .two-sixths {
+    width: 31.623931623931625%;
+  }
+
+  .four-sixths,
+  .two-thirds {
+    width: 65.81196581196582%;
+  }
+
+  .one-fourth {
+    width: 23.076923076923077%;
+  }
+
+  .three-fourths {
+    width: 74.35897435897436%;
+  }
+
+  .one-sixth {
+    width: 14.52991452991453%;
+  }
+
+  .five-sixths {
+    width: 82.90598290598291%;
+  }
+
+  .first {
+    clear: both;
+    margin-left: 0;
+  }
+}
+
+
+/* Soliloquy Slider
+--------------------------------------------- */
+
+.soliloquy-theme-base {
+  .soliloquy-caption-bottom {
+    .soliloquy-caption-inside {
+      color: $white;
+      font-family: $font-family-heading;
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      padding: 50px;
+    }
+  }
+}

@@ -1,0 +1,733 @@
+/* Blocks
+---------------------------------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------- */
+
+body {
+  @include base-style();
+  font-family: $font-family-body;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $highlight;
+  text-decoration: none;
+  @extend %transition;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  svg {
+    @extend %transition;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sub-menu {
+    margin: 10px 20px;
+}
+
+code,
+pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+}
+
+code {
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 18px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: 0;
+}
+
+cite {
+  font-style: normal;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.alert-info {
+  color: #333;
+  padding: 1em;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+/* Paragraph
+--------------------------------------------- */
+
+p {
+  margin: 0 $base-margin;
+  padding: 0;
+
+  &.large,
+  &.has-large-font-size {
+    @include font-sizes( 18px, null, 20px );
+  }
+
+  &.has-regular-font-size {
+    font-size: 16px;
+  }
+
+  &.small,
+  &.has-small-font-size {
+    font-size: 12px;
+  }
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.home .gform_wrapper.gravity-theme .gfield_label {
+  color: $base-color;
+  line-height: 1.2;
+  font-family: $font-family-heading;
+  font-weight: 400;
+  // margin-bottom: 16px;
+
+  a {
+    color: $highlight;
+
+    &:hover {
+      color: rgba($highlight, 0.75);
+      text-decoration: none;
+    }
+  }
+}
+
+h1 {
+  font-size: 1.45em;
+  margin-bottom: 1em;
+}
+h2 {
+  font-size: 2em;
+  font-weight: 300;
+  margin-bottom: 1em;
+  text-align: left;
+}
+h3,
+.home .gform_wrapper.gravity-theme .gfield_label {
+  font-size: 1.271em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+h4 {
+  font-size: 1.2em;
+  margin-bottom: 16px;
+}
+h5 {
+  font-size: 1.15em;
+  margin-bottom: 16px;
+}
+h6 {
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+
+/* Button
+--------------------------------------------- */
+
+$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
+
+.wp-block-button__link {
+  border-radius: 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .is-style-full &,
+  &.full {
+    display: block;
+    width: 100%;
+  }
+
+  &:not(.has-text-color) {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &:not(.has-background) {
+    background-color: $default;
+
+    &:hover,
+    &:focus {
+      background-color: darken( $default, 20% );
+    }
+  }
+
+  @each $name, $color in $colors {
+
+    &.has-#{$name}-color:hover,
+    &.has-#{$name}-color:focus {
+      color: $color;
+    }
+
+    &.has-#{$name}-background-color:hover,
+    &.has-#{$name}-background-color:focus {
+      background-color: darken( $color, 20% );
+    }
+  }
+}
+
+/* Blockquote
+--------------------------------------------- */
+
+blockquote,
+blockquote.wp-block-quote {
+  background: transparent;
+  text-align: left;
+
+  p {
+    color: $highlight;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  cite,
+  .wp-block-quote__citation {
+    color: $highlight;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &.is-large,
+  &.is-style-large {
+    margin: calc( 2 * $block-margin ) auto;
+
+    p {
+      @include font-sizes( 24px, 36px );
+    }
+
+    cite {
+      text-align: left;
+    }
+  }
+
+}
+
+/* Pull Quote
+--------------------------------------------- */
+
+.wp-block-pullquote {
+  border: none;
+  padding: 0;
+
+  blockquote {
+    border-left: 0;
+    border-top: 8px solid $highlight;
+    border-bottom: 8px solid $highlight;
+    padding: 16px 0;
+    text-align: center;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  &.alignleft,
+  &.alignright {
+
+    blockquote {
+      max-width: 100%;
+    }
+  }
+}
+
+/* Separator
+--------------------------------------------- */
+
+.wp-block-separator,
+hr {
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 32px;
+  position: relative;
+
+  &::before {
+    background: $border-color;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    margin-top: -.5px;
+  }
+}
+
+/* Image
+--------------------------------------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wp-block-image,
+.entry-content {
+  figcaption,
+  .wp-caption-text {
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.25px;
+    margin: 0;
+    padding: 0.75em 1em;
+    text-align: left;
+
+    a {
+      color: $white;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.portrait {
+  width: 101px;
+}
+
+/* Address
+--------------------------------------------- */
+
+address {
+  font-style: normal;
+}
+
+/* Tables
+--------------------------------------------- */
+
+.wp-block-table  {
+
+  border-collapse: collapse;
+  width: 100%;
+
+  td, th {
+    padding: .5em;
+    border: 1px solid $border-color;
+  }
+}
+
+/* Media And Text
+--------------------------------------------- */
+
+.wp-block-media-text.is-stacked-on-mobile {
+
+  @include media('<small') {
+    // stack into single column sooner than block editor default
+    grid-template-columns: 1fr;
+    // !important needed to force media to show above content on smaller
+    // screens when block is set to Media on the right, Text on the left
+    grid-template-areas:
+      "media-text-media"
+      "media-text-content" !important;
+
+    // add margin between media and text when in one column
+    .wp-block-media-text__media {
+      margin-bottom: $margin_2x;
+    }
+  }
+}
+
+/* Navigation Block
+--------------------------------------------- */
+
+.wp-block-navigation__container {
+	padding: 1rem 0 1rem 0;
+	color: #500000;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	background-color: #fff;
+}
+.wp-block-navigation ul li {
+    padding: 1rem 0.5rem;
+}
+
+/* Sections
+--------------------------------------------- */
+
+@mixin section-titles($section) {
+  section.#{$section},
+  div.#{$section} {
+    .title-container {
+      padding-top: 3rem;
+      border-top: 2px solid map-get($colors, $section);
+
+      h2 {
+        background-color: map-get($colors, $section);
+      }
+    }
+  }
+}
+
+/* Organizational Areas
+--------------------------------------------- */
+  .tax-and-term-title {
+    display: flex;
+    font-size: 1.3em;
+    margin: 0 $base-margin 0 $base-margin;
+    @include media('>large') {
+      margin: 0;
+    }
+  }
+
+  p.tax-title {
+    font-weight: 700;
+    margin: 0 1em 0 0;
+    padding-right: 1em;
+    border-right: 2px solid $black;
+    display: inline;
+  }
+
+  p.term-title {
+    display: inline;
+    margin: 0;
+  }
+
+  .hero-title {
+    font-size: 2em;
+    font-weight: 700;
+    bottom: 2rem;
+    position: absolute;
+    left: 2rem;
+  }
+
+/* Project Areas
+--------------------------------------------- */
+body .wp-block-group {
+  h3.example-heading {
+    font-family: $font-family-heading;
+    font-weight: 300;
+    letter-spacing: 3px;
+    letter-spacing: inherit;
+    font-size: xx-large;
+  }
+  .wp-block-group__inner-container p.intro-paragraph {
+    padding: 1rem 20% 2rem 20%;
+    font-size: small;
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+  .project-columns {
+    gap: 4em;
+    width: 75%;
+    margin: 0 auto;
+    text-align: left;
+    > .wp-block-column {
+      flex-basis: 350px;
+    }
+
+    p.project-category {
+      font-size: small;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    h4.project-title {
+      font-family: $font-family-body;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+    p.project-description {
+      font-size: small;
+      font-weight: 400;
+      margin: 0.5rem 0;
+    }
+    p.project-researcher {
+      margin: 0.5rem 0;
+      &::before {
+        content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='20px' height='20px' viewBox='-0.5 0 33 33' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Euser%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ui-gambling-website-lined-icnos-casinoshunter' transform='translate(-2554.000000, -285.000000)' fill='%231C1C1F' fill-rule='nonzero'%3E%3Cg id='1' transform='translate(1350.000000, 120.000000)'%3E%3Cpath d='M1220.5,165 C1225.74671,165 1230,169.253295 1230,174.5 C1230,178.085671 1228.01348,181.207366 1225.08096,182.824556 C1231.42682,184.947265 1236,190.939571 1236,198 L1236,198 L1204,198 C1204,190.700268 1208.88843,184.542291 1215.57023,182.621136 C1212.83014,180.95584 1211,177.941646 1211,174.5 C1211,169.253295 1215.25329,165 1220.5,165 Z' id='user'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        width: 20px;
+        height: 20px;
+        padding-right: 5px;
+      }
+    }
+    p.project-tags {
+      margin: 0.5rem 0;
+      &::before {
+        content: url("data:image/svg+xml,%3C%3Fxml version='1.0' standalone='no'%3F%3E%3Csvg width='20px' height='20px' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' class='icon'%3E%3Cpath d='M483.2 790.3L861.4 412c1.7-1.7 2.5-4 2.3-6.3l-25.5-301.4c-.7-7.8-6.8-13.9-14.6-14.6L522.2 64.3c-2.3-.2-4.7.6-6.3 2.3L137.7 444.8a8.03 8.03 0 0 0 0 11.3l334.2 334.2c3.1 3.2 8.2 3.2 11.3 0zm122.7-533.4c18.7-18.7 49.1-18.7 67.9 0 18.7 18.7 18.7 49.1 0 67.9-18.7 18.7-49.1 18.7-67.9 0-18.7-18.7-18.7-49.1 0-67.9zm283.8 282.9l-39.6-39.5a8.03 8.03 0 0 0-11.3 0l-362 361.3-237.6-237a8.03 8.03 0 0 0-11.3 0l-39.6 39.5a8.03 8.03 0 0 0 0 11.3l243.2 242.8 39.6 39.5c3.1 3.1 8.2 3.1 11.3 0l407.3-406.6c3.1-3.1 3.1-8.2 0-11.3z'/%3E%3C/svg%3E%0A");
+        width: 20px;
+        height: 20px;
+        padding-right: 5px;
+      }
+    }
+
+  }
+}
+
+
+/*
+$sections: intro, projects, team, contact;
+
+@each $section in $sections {
+  .site-main @include section-titles($section);
+}*/
+/*
+.site-main section {
+  //border-top: 2px solid #bfbfc0;
+
+  //:nth-child(even) {background: $lightgrey;}
+  //:nth-child(odd) {background: $white;}
+
+  > * {
+    max-width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title-container + div,
+  .gcb-title-container + div {
+    padding-top: 64px;
+  }
+
+  .title-container,
+  .gcb-title-container {
+    border-top: 2px solid #bfbfc0;
+    max-width: 100%;
+    text-align: center;
+    height: 55px;
+    position: relative;
+    padding-top: 3rem;
+    
+    margin: 0px calc(50% - 50vw) !important;
+	  max-width: 100vw;
+	  width: 100vw;
+    
+
+    h2 {
+      border-radius: 10px;
+      color: $white;
+      display: inline-block;
+      padding: 15px 30px;
+      margin: -30px auto 0;
+      max-width: $content-width;
+      width: fit-content;
+      width: -moz-fit-content;
+
+      box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+
+        &.bg-blue { background-color: $blue; }
+        &.bg-maroon { background-color: $maroon; }
+        &.bg-white { background-color: $white; color: $black; }
+        &.bg-green { background-color: $green; }
+        &.bg-teal { background-color: $teal; }
+        &.bg-brown { background-color: $brown; }
+        &.bg-tan { background-color: $tan; color: $black; }
+        &.bg-black { background-color: $black; }
+        &.bg-darkgrey { background-color: $darkgrey; color: $black; }
+        &.bg-lightgrey { background-color: $lightgrey; color: $black; }
+        &.bg-yellow { background-color: $yellow; color: $black; }
+    }
+  }
+
+  .custom-content,
+  .featured,
+  .team-content {
+    padding: 12px;
+
+    @include media('>=small') {
+      padding: 48px;
+    }
+
+    ~ .custom-content {
+      background-color: #e9e9e9;
+    }
+
+    .person-portrait {
+      img {
+        margin: 0 auto;
+      }
+
+      @include media('>=medium') {
+        float: left;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .team-content {
+    padding-top: 0;
+  }
+
+  &.reach-us {
+    background-color: $grey-3;
+
+    .title-container + div,
+    .gcb-title-container + div {
+      padding-top: 0;
+    }
+
+    .custom-content,
+    .featured,
+    .team-content {
+      padding: 0;
+
+      @include media('>=small') {
+        padding: 0;
+      }
+    }
+
+    > * {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    h2.gform_title {
+      color: $black;
+      letter-spacing: normal;
+      line-height: normal;
+      font-weight: 400;
+    }
+  }
+}
+*/
+/* Color Options
+--------------------------------------------- */
+
+@each $name, $color in $colors {
+
+  .has-#{$name}-color {
+    color: $color;
+  }
+
+  .has-#{$name}-background-color {
+    background-color: $color;
+  }
+}
+
+/* WPForms
+--------------------------------------------- */
+
+div.wpforms-container {
+
+  .wpforms-title {
+    @include font-sizes( 24px, 32px );
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+
+  .wpforms-description {
+    margin: 0 0 16px;
+    padding: 0;
+  }
+
+  .wpforms-field {
+    padding: 0;
+    margin-bottom: 32px;
+  }
+
+  .wpforms-field-label {
+    font-size: 16px;
+  }
+
+  .wpforms-recaptcha-container {
+    padding: 0;
+
+    @include media(">=tablet") {
+      margin-bottom: -78px;
+    }
+  }
+
+  .wpforms-submit-container {
+    padding: 0;
+    margin-top: 32px;
+    text-align: right;
+  }
+
+  &.one-line {
+    @include clearfix;
+
+      @include media(">=tablet") {
+
+      .wpforms-field-container {
+        display: table;
+        width: calc(100% - 110px);
+        float: left;
+
+        .wpforms-field {
+          display: table-cell;
+          padding-right: 16px;
+          margin: 0;
+        }
+      }
+
+      .wpforms-submit-container {
+        float: right;
+        width: 110px;
+        clear: none;
+        margin: 0;
+      }
+    }
+  }
+}

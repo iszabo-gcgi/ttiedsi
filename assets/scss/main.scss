@@ -1,0 +1,24 @@
+@import "partials/base";
+@import "partials/reset";
+@import "partials/utilities";
+@import "partials/events";
+@import "partials/form";
+@import "partials/form-event";
+@import "partials/buttons";
+@import "partials/blocks";
+@import "partials/layout";
+@import "partials/site-header";
+@import "partials/navigation";
+@import "partials/archive";
+@import "partials/singular";
+@import "partials/entry-content";
+@import "partials/site-footer";
+@import "partials/home-template-front-page.scss"; // To keep ACF home working may phase out
+@import "partials/home-blocks";
+@import "partials/pattern-blocks";
+// @import "partials/projects";
+@import "partials/sidebar";
+@import "partials/tableau";
+@import "partials/template-news-posts";
+@import "modules/base-styles";
+@import "modules/helpers";

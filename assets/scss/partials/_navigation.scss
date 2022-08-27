@@ -1,0 +1,345 @@
+/* Navigation
+---------------------------------------------------------------------------------------------------- */
+
+.nav-menu {
+
+  ul {
+    clear: both;
+    line-height: 1;
+    margin: 0;
+    width: 100%;
+  }
+
+  .menu-item {
+    float: left;
+    list-style: none;
+    position: relative;
+
+    a {
+      border: none;
+      color: $base-color;
+      display: block;
+      font: {
+        size: 14px;
+        weight: 400;
+      }
+      line-height: 16px;
+      position: relative;
+      text-decoration: none;
+    }
+
+    &:hover > a,
+    &.current-menu-item > a,
+    &.current-menu-ancestor > a {
+      color: $highlight;
+    }
+  }
+}
+
+/* Primary
+--------------------------------------------- */
+
+.nav-primary {
+  background-color: #fff;
+  border: {
+    bottom: 1px solid #eee;
+    top: 1px solid #eee;
+  }
+  line-height: 1;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  @include media("<=mobile_menu") {
+    top: 34px;
+    border-top: none;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    min-height: 0;
+
+    @include media("<=mobile_menu") {
+      background: $grey;
+      flex-direction: column;
+      height: 100vh;
+      min-width: 40vw;
+      opacity: 0.975;
+      padding-bottom: 50px;
+      position: fixed;
+      top: 0;
+    }
+
+    ul {
+      justify-content: center;
+      list-style: none;
+      margin-top: 40px;
+
+      @include media('>mobile_menu') {
+        margin-top: 0;
+      }
+
+      > li {
+        display: block;
+        position: relative;
+        text-align: left;
+
+        @include media(">mobile_menu") {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+
+    a {
+      color: $maroon;
+      display: flex;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      padding: 23px 20px;
+      text-transform: uppercase;
+    }
+
+    a:hover,
+    a:focus {
+      color: $white;
+      background-color: $darkgrey;
+      text-decoration: none;
+    }
+
+    @include media('>mobile_menu') {
+      flex-direction: row;
+    }
+}
+
+  @include media("<=mobile_menu") {
+    display: none;
+    border-top: none;
+
+    &.active {
+      background: $white;
+      display: flex;
+      flex-flow: column nowrap;
+      margin: 0 -16px;
+      padding: 0 16px;
+
+      .menu-item.search,
+      .sub-menu {
+        display: none;
+      }
+
+      .menu-item {
+        float: none;
+
+        & > a {
+          padding: 20px;
+        }
+
+        &.menu-item-has-children {
+          position: relative;
+
+          & > a {
+            // padding-right: 32px;  Submenu Navidate Icons Not Working
+          }
+        }
+      }
+
+      .menu > .menu-item {
+
+        & + .menu-item {
+          // border-top: 1px solid $grey_3; --- Removing border top for responsive menu
+        }
+
+      }
+
+      .submenu-expand {
+        cursor: pointer;
+        line-height: 0;
+        outline: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 56px;
+        width: 32px;
+        text-align: center;
+
+        &.expanded {
+          transform: rotate(180deg);
+
+          & + .sub-menu {
+            display: block;
+          }
+        }
+
+        svg {
+          @include icon-position( 16px, 56px );
+        }
+
+        &:hover svg,
+        &.expanded svg {
+          fill: $highlight;
+        }
+      }
+    }
+  }
+
+  @include media(">mobile_menu") {
+    width: auto;
+
+    .menu-item {
+
+      & > a {
+        font-size: 15px;
+        padding: 12px 24px;
+      }
+
+      &:hover > a,
+      &.current-menu-item > a,
+      &.current-menu-ancestor > a {
+      }
+
+      &:hover {
+
+        & > .sub-menu {
+          left: auto;
+          opacity: 1;
+        }
+      }
+
+      &.menu-item-has-children > a {
+        // padding-right: 26px;  Children Navigate Icon Not Working
+      }
+    }
+
+    ul > .menu-item {
+
+      & > a {
+        padding: {
+          top: 23px;
+          bottom: 23px;
+        }
+      }
+    }
+
+    .submenu-expand {
+      line-height: 0;
+      margin-top: -5px;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+
+      svg {
+        @include icon-position( 10px );
+      }
+    }
+
+    .sub-menu {
+      background: $darkgrey;
+      left: -9999px;
+      opacity: 0;
+      position: absolute;
+      z-index: 99;
+
+      .menu-item {
+        float: none;
+
+         a {
+          color: $light-grey;
+
+          &:hover {
+            color: $white;
+          }
+         }
+      }
+
+      .sub-menu {
+        margin: -40px 0 0 170px;
+      }
+    }
+  }
+}
+
+/* Mobile
+--------------------------------------------- */
+
+.topbar-mobile {
+  background: linear-gradient(to bottom, $maroon 0%, darken($maroon, 5%));
+  border-bottom: 1px solid #370000;
+  font-size: 12px;
+  display: flex;
+  flex-flow: column wrap-reverse;
+  justify-items: flex-start;
+  min-height: 55px;
+  padding: .5em;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  @include media(">mobile_menu") {
+    display: none;
+  }
+}
+
+.nav-mobile {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+
+  @include media(">mobile_menu") {
+    display: none;
+  }
+}
+
+.mobile-menu-toggle {
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 12px;
+
+  @include media(">mobile_menu") {
+    display: none;
+  }
+
+  svg {
+    fill: $white;
+  }
+
+  &:focus,
+  &.active {
+    background: transparent;
+    border: solid 1px transparent;
+    color: $maroon;
+    margin: 6px;
+    outline: none;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    svg {
+      fill: $darkgrey;
+    }
+  }
+
+  .menu-close {
+    display: none;
+  }
+
+  &.active {
+
+    .menu-close {
+      display: flex;
+    }
+
+    .menu-open {
+      display: none;
+    }
+  }
+}

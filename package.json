@@ -1,0 +1,28 @@
+{
+  "name": "ttibase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss:dev": "node-sass assets/scss -o assets/css --output-style 'expanded' --source-map true -q",
+    "scss:prod": "node-sass assets/scss -o assets/css --output-style 'compressed' --source-map false -q",
+    "postcss": "postcss -u autoprefixer -r assets/css/*.css",
+    "uglify:dev": "uglifyjs assets/js/src/*.js -b -o assets/js/global.min.js",
+    "uglify:prod": "uglifyjs assets/js/src/*.js -c -m -o assets/js/global.min.js",
+    "prod": "npm run scss:prod & npm run postcss & npm run uglify:prod",
+    "watch:scss": "nodemon --watch assets/scss -e scss -x \"npm run scss:dev\"",
+    "watch:js": "nodemon --watch assets/js/src -e js -x \"npm run uglify:dev\"",
+    "watch": "npm run watch:scss & npm run watch:js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "postcss-cli": "^7.1.2",
+    "uglify-js": "^3.10.4"
+  },
+  "dependencies": {}
+}

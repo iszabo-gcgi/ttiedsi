@@ -1,0 +1,77 @@
+@mixin base-style {
+  color: $base-color;
+  font-family: $font-family-body;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+%transition {
+  transition: all 0.1s ease-in-out;
+}
+
+%alt_link {
+  color: $base-color;
+  font-weight: 400;
+
+  &:hover {
+    color: $highlight;
+    text-decoration: none;
+  }
+}
+
+@mixin fullwidth {
+  left: 50%;
+  right: 50%;
+  margin-inline: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  width: 100vw;
+}
+
+@mixin input-styling {
+
+  input[type=date],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=email],
+  input[type=month],
+  input[type=number],
+  input[type=password],
+  input[type=range],
+  input[type=search],
+  input[type=tel],
+  input[type=text],
+  input[type=time],
+  input[type=url],
+  input[type=week],
+  select,
+  textarea {
+    background-color: #fff;
+    border: 1px solid $border_color;
+    border-radius: 3px;
+    color: $base-color;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  input[type=date],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=email],
+  input[type=month],
+  input[type=number],
+  input[type=password],
+  input[type=range],
+  input[type=search],
+  input[type=tel],
+  input[type=text],
+  input[type=time],
+  input[type=url],
+  input[type=week],
+  select {
+    height: 50px;
+  }
+}

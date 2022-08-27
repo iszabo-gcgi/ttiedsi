@@ -1,0 +1,327 @@
+.add-an-event {
+    .content-area {
+        background-color: #F1F1F1;
+        margin: {
+            top: 32px;
+            bottom: 0;
+        };
+        padding: {
+            top: 32px;
+            bottom: 32px;
+        };
+
+        .entry-header {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 32px;
+        }
+    }
+}
+
+.entry-content .gform_wrapper.gravity-theme {
+    .gfield_time_hour label.hour_label,
+    .gfield_time_minute label.minute_label {
+        display: inline-block;
+    }
+
+    // Correct a global Gravity Form style from interfering with our custom layout.
+    .gfield {
+        min-width: revert;
+    }
+
+    .gfield_label {
+        margin-bottom: 0;
+    }
+
+    input,
+    textarea {
+        background-color: #FFF;
+    }
+
+    input[type="submit"] {
+        background-color: #616161;
+        color: #FFF;
+    }
+
+    button,
+    input[type="button"] {
+        background-color: #FFF;
+        background-color: #616161;
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    .gsection_title {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    .gsection-wrap {
+        border: 2px solid #CCC;
+        border-radius: 6px;
+        background-color: #FFF;
+
+        > .gsection {
+            padding: {
+                left: 16px;
+                right: 16px;
+                bottom: 0;
+            }
+            
+            &.gform-section-group .gsection-label {
+                left: 16px;
+                top: 16px;
+            }
+
+            &:nth-child(2) {
+                padding: {
+                    top: 16px;
+                    bottom: 16px;
+                }
+            }
+        }
+    }
+
+    .gsection {
+        border-bottom-width: 2px;
+    }
+
+    .gfield.gform-section-group {
+        display: flex;
+        flex-flow: row wrap;
+        padding-right: 0;
+        padding-left: 0;
+        position: relative;
+        border-bottom: none;
+
+        &.has-description {
+            padding-left: 15%;
+            padding-right: 16px;
+
+            /* 5 columns per row. */
+            &.event-time-date {
+                > .gfield {
+                    width: 15%;
+                }
+            }
+
+            > .gfield {
+                width: 85%;
+
+                &.gsection-label {
+                    width: 15%;
+                }
+            }
+        }
+
+        .gsection-label {
+            width: 15%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &.event-image {
+            justify-content: center;
+            text-align: center;
+
+            input[type="file"] {
+                border-radius: 0;
+            }
+
+            > .gfield {
+                width: auto;
+                flex-wrap: wrap;
+            }
+
+            .gform_fileupload_rules {
+                display: none;
+            }
+
+            input.large {
+                width: auto;
+            }
+        }
+
+        &.organizer-details {
+            .gsection-label + .gfield + .gfield ~ .gfield {
+                margin-top: 16px;
+            }
+
+            > .gfield {
+                &:nth-child(2n + 3) {
+                    width: 10%;
+                    padding-right: 0;
+                    justify-content: flex-end;
+                }
+
+                &:nth-child(even) {
+                    width: 90%;
+
+                    .gfield_label {
+                        width: 1px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-indent: 10px;
+                        margin-left: -1px;
+                    }
+
+                    .ginput_container_select {
+                        min-width: 300px;
+                    }
+                }
+
+                &.gfield_html {
+                    margin-top: 16px;
+                }
+            }
+
+            .hidden_label {
+                .admin-hidden-markup {
+                    display: none;
+                }
+            }
+        }
+
+        .gsection-label {
+            justify-content: flex-start;
+        }
+
+        > .gfield {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 20%;
+
+            &:last-child {
+                width: 100%;
+            }
+        }
+
+        .ginput_complex {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .left_label,
+    .top_label {
+        > .label-above {
+            &.gfield:not(.gsection):not(.gfield_html):not(fieldset) {
+                justify-content: flex-start;
+            }
+
+            .gfield_label,
+            div:not(.ui-resizable-handle):not(.gfield-admin-icons) {
+                width: 100%;
+            }
+        }
+
+        .gfield.gform-section-group {
+            > .gfield {
+                width: 20%;
+
+                &:last-child {
+                    width: 80%;
+                }
+            }
+
+            div.hidden_label {
+                > div:not(.ui-resizable-handle):not(.gfield-admin-icons) {
+                    width: 100%;
+                }
+
+                .gfield_label {
+                    width: 1px;
+                }
+            }
+        }
+    }
+
+    .event-time-date {
+        select {
+            padding: 4px;
+            height: 38px;
+            line-height: 38px;
+        }
+
+        .gfield {
+            height: 38px;
+            line-height: 38px;
+        }
+
+        .hour_minute_colon {
+            line-height: 38px;
+        }
+
+        .gsection-label,
+        .gfield_label {
+            line-height: 38px;
+        }
+
+        label,
+        .gfield-choice-input + label {
+            white-space: nowrap;
+        }
+
+        .gfield_label {
+            white-space: nowrap;
+            
+            > .gfield_required {
+                &::before {
+                    content: "*";
+                    margin-right: 6px;
+                }
+
+                .gfield_required_text {
+                    visibility: hidden;
+                    width: 1px;
+                }
+            }
+        }
+
+        &.gfield.gform-section-group.has-description > .gfield {
+            padding-left: 8px;
+
+            &:nth-child(1) {
+                padding-left: 0;
+            }
+            
+            // Calendar fields.
+            &:nth-child(2),
+            &:nth-child(4) {
+                width: 11%;
+            }
+            
+            // Time fieldset.
+            &:nth-child(3),
+            &:nth-child(5) {
+                width: 10%;
+                .ginput_container_time:not(.gfield_time_ampm) {
+                    min-width: 45px;
+                    max-width: 45px;
+                }
+                
+                .ginput_container_time.gfield_time_ampm {
+                    margin-left: 8px;
+                    min-width: 55px;
+                    max-width: 55px;
+                }
+                
+                .hour_minute_colon {
+                    padding: 0 4px;
+                }
+            }
+
+            &:nth-child(6) {
+                width: auto;
+            }
+        }
+
+        .ginput_container_date {
+            align-items: start;
+        }
+    }
+}

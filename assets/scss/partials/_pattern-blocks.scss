@@ -1,0 +1,51 @@
+
+body.full-width-content section {
+  
+  //WHAT WE DO
+  &.what-we-do .wp-block-group__inner-container {
+    h2 {
+      margin-bottom: 3rem;
+    }
+    .things-we-do.areas {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  //OUR FOCUS AREAS
+  &.focus-areas {
+    .wp-block-group__inner-container {
+      h2 {
+        margin-bottom: 3rem;
+      }
+      .focus-areas.areas {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  // ORGANIZATIONAL AREAS
+  &.organizational-areas {
+    .wp-block-group__inner-container {
+      h2 {
+        margin-bottom: 3rem;
+      }
+      .organizational-areas.areas {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.what-we-do-header {
+  h2 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  p {
+    margin: 2rem 0;
+  }
+}

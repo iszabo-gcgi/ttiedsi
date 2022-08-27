@@ -1,0 +1,185 @@
+/* Page entry headers
+--------------------------------------------- */
+.page-title-container:not(.archive-description):not(.taxonomy-description){
+	border-top: 2px solid $teal;
+    max-width: 100%;
+    margin-top: 20px;
+    text-align: center;
+
+	    @include media('>mobile_menu') {
+    		margin-top: 40px;
+    	}
+
+     h1 {
+        background-color: $teal;
+        border-radius: 10px;
+        color: $white;
+        display: inline-block;
+        letter-spacing: 3px;
+        margin: -20px auto 0;
+        max-width: $content-width;
+        padding: 15px 30px;
+        text-transform: uppercase;
+        width: fit-content;
+        width: -moz-fit-content;
+     }
+  }
+
+/* Page entry content
+--------------------------------------------- */
+.entry-content,
+.sidebar {
+	// overflow: auto;
+
+	h2 {
+		clear: both;
+		margin-bottom: 8px;
+
+		~ p {
+			// margin-top: .5px;
+		}
+	}
+
+	ul:not(.wp-block-navigation__container), ol {
+	  padding-left: 2.5em;
+	  line-height: 1.35;
+
+	  li, ol {
+	    padding-bottom: .5rem;
+
+	    &:last-child {
+	      padding-bottom: .75em;
+	    }
+
+	    ul, ol {
+	      padding-top: .5rem;
+	    }
+	  }
+
+	  &.wp-block-gallery {
+	    padding-left: 0;
+
+	    li {
+	      padding-bottom: 0;
+	    }
+	  }
+	}
+
+	/* Tables
+	--------------------------------------------- */
+
+	.table-people {
+		clear: both;
+		width: 100%;
+
+		tr {
+			padding: 15px 20px;
+		}
+
+		thead {
+			tr {
+				// display: flex;
+			    flex-flow: row;
+			    padding: 0;
+			}
+
+			th {
+				padding-left: 20px;
+			}
+		}
+	}
+
+	table,
+	.table {
+		border-collapse: collapse;
+    	border: {
+    		left: 1px solid #ccc;
+    		right: 1px solid #ccc;
+    	}
+    	width: -webkit-fill-available;
+    	word-break: break-all;
+
+    	caption {
+    		font-weight: 500;
+    	}
+
+    	tr {
+	    	border: {
+	    		bottom: 1px solid #ccc;
+	    		top: 1px solid #ccc;
+	    	}
+    		display: flex;
+    		flex-flow: column;
+
+    		@include media('>=mobile_menu') {
+    			border: 0;
+    			display: table-row;
+    			padding: 0;
+    		}
+    	}
+		thead {
+			display: table-header-group;
+			background-color: $maroon;
+			color: $white;
+		}
+	    th {
+	    	background-color: $maroon;
+	    	color: $white;
+	      padding-left: 10px;
+	      text-align: left;
+	    }
+	    td {
+	    	font-size: 15px;
+	    	line-height: 1.15;
+
+	    	@include media('>=mobile_menu') {
+		    	border: 1px solid #ccc;
+		    	line-height: normal;
+		    	padding: 4px 10px;
+		    	width: 25%;
+	    	}
+	    }
+	    p {
+	    	margin-bottom: 0;
+	    }
+	    .resume-link {
+	    	font-size: 16px;
+	    }
+
+	    ul,
+	    ol {
+	    	padding-left: 1.5em;
+	    }
+	}
+/*
+	.data {
+		tr {
+			border: 0;
+			display: table-row;
+			padding: 0;
+		}
+		thead {
+			display: table-header-group;
+			background-color: $maroon;
+			color: $white;
+		}
+    	td {
+	    	border: 1px solid #ccc;
+	    	line-height: normal;
+	    	padding: 4px 10px;
+	    	width: 25%;
+    	}
+	} */
+}
+// // fixing full-width image behavior when added on a page in the dashboard
+// .wp-block-cover {
+//   width: auto;
+// }
+
+
+
+/* News Archive Template
+--------------------------------------------- */
+
+
+

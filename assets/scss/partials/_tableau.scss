@@ -1,0 +1,16 @@
+.single-project {
+	.entry-content {
+		.tableauPlaceholder {
+			overflow: scroll !important;
+			overflow-x: scroll !important;
+		}
+
+		.dijitContainer{
+			overflow-x: scroll;
+
+			.dijitLayoutContainer {
+				overflow-x: scroll;
+			}
+		}
+	}
+}

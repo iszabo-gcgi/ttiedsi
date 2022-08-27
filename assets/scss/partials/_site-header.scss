@@ -1,0 +1,139 @@
+/* TopBar Site Pre Header
+--------------------------------------------- */
+
+.topbar {
+  background: linear-gradient(to bottom, $maroon 0%, darken($maroon, 5%));
+  border-bottom: 1px solid $light-grey;
+  font-size: 14px;
+  padding: .75em 1.5em;
+  display: flex;
+  flex: {
+    direction: row-reverse;
+    wrap: wrap-reverse;
+  }
+  justify-items: flex-start;
+
+  @include media("<=mobile_menu") {
+    display: none;
+  }
+
+  .topnav {
+    padding: {
+      top: 2px;
+      right: 5px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-bottom: -6px;
+      padding-right: 12px;
+    }
+
+    a {
+      color: $white;
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/* Site Header
+--------------------------------------------- */
+
+.site-header {
+  background: $white;
+  position: relative;
+
+  .wrap {
+    padding: {
+      right: 6px;
+      left: 6px;
+    }
+  }
+
+  .title-area {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align: {
+      items: center;
+      content: center;
+    }
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
+  .site-logo {
+    border-right: 2px solid $maroon;
+    padding-right: 1rem;
+    flex-shrink: 3;
+
+    a {
+      display: flex;
+      display: inline-block;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flex;
+      max-width: 248px;
+      height: 48px;
+
+      .logo {
+        width: 100%;
+      }
+    }
+  }
+
+    .site-title {
+      margin-left: 1rem;
+      flex-shrink: 2;
+
+      h1,
+      p {
+        font-size: 1.25em;
+        font-weight: 300;
+        line-height: 1.15;
+        margin: 0 auto;
+
+        @include media(">=phone") {
+          font-size: 1.5em;
+        }
+        @include media(">=mobile_menu") {
+          font-size: 2.2em;
+        }
+      }
+
+      p {
+        color: $black;
+        font-family: $font-family-heading;
+      }
+    }
+  }
+
+  .header-image .site-title > a {
+    // background: url('../images/ttilogo.svg');
+    // background-repeat: no-repeat;
+}
+
+
+/* Admin Bar
+--------------------------------------------- */
+
+@include media(">=tablet" ) {
+  .admin-bar .site-container {
+    padding-top: 32px;
+  }
+}
+
+@include media("<tablet") {
+  #wpadminbar {
+    display: none !important;
+  }
+}

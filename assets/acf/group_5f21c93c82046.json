@@ -1,0 +1,479 @@
+{
+    "key": "group_5f21c93c82046",
+    "title": "Homepage Content",
+    "fields": [
+        {
+            "key": "field_5f3ad81fc62d1",
+            "label": "Add Section(s) to home",
+            "name": "content_sections",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5f3a89b74d308",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add a(nother) Section",
+            "sub_fields": [
+                {
+                    "key": "field_5f3a89b74d308",
+                    "label": "Section Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "Shorter is better",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 50
+                },
+                {
+                    "key": "field_5f3aada425fca",
+                    "label": "Section Color",
+                    "name": "section_color",
+                    "type": "color_picker",
+                    "instructions": "Colors section header, border, and some elements",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#003c71"
+                },
+                {
+                    "key": "field_5f3be23127c4e",
+                    "label": "Section Header",
+                    "name": "section_header",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Add a section header?",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Header",
+                    "ui_off_text": "No Header"
+                },
+                {
+                    "key": "field_5f221de780316",
+                    "label": "Add Content(s) to Section",
+                    "name": "section_contents",
+                    "type": "flexible_content",
+                    "instructions": "Add one or multiple \"contents\" with options for different content formatting\/functionality.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layouts": {
+                        "layout_5f3a89994d307": {
+                            "key": "layout_5f3a89994d307",
+                            "name": "section_content_custom",
+                            "label": "Custom Content",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5f3a8a044d309",
+                                    "label": "",
+                                    "name": "content_custom",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_5f57f12e5c638": {
+                            "key": "layout_5f57f12e5c638",
+                            "name": "section_featured",
+                            "label": "Featured Person section",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5f57f1945c639",
+                                    "label": "Featured Person",
+                                    "name": "content_featured",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "row",
+                                    "button_label": "Add a(nother) Featured Person section block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5f57f32d5c63a",
+                                            "label": "People ID#",
+                                            "name": "people_ID",
+                                            "type": "number",
+                                            "instructions": "<ul>To find the people ID number for a TTI team member: <li>Search and open person page @ <a href=\"https:\/\/tti.tamu.edu\/people\/\" target=\"_blank\">tti.tamu.edu\/people<\/a><\/li><li>On the person page, find the ID# in the browser address bar<br \/><code>https:\/\/tti.tamu.edu\/people\/resume\/?id=<strong>[ personID# ]<\/strong><\/code><\/li><\/ul>",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "Ex: \"315\"",
+                                            "prepend": "",
+                                            "append": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": ""
+                                        },
+                                        {
+                                            "key": "field_5f57f4785c63b",
+                                            "label": "Alternate Featured Photo",
+                                            "name": "featured_photo",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "url",
+                                            "preview_size": "tti_featured",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": ""
+                                        },
+                                        {
+                                            "key": "field_5f5ae2b711c5c",
+                                            "label": "Featured Bio (alt)",
+                                            "name": "featured_bio",
+                                            "type": "textarea",
+                                            "instructions": "*optional",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "maxlength": "",
+                                            "rows": 4,
+                                            "new_lines": "wpautop"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_5f442d269408e": {
+                            "key": "layout_5f442d269408e",
+                            "name": "section_projects",
+                            "label": "Projects section",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5f442d4f9408f",
+                                    "label": "Projects",
+                                    "name": "content_projects",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "ui": 1,
+                                    "ui_on_text": "Show Projects",
+                                    "ui_off_text": "Don't Show Projects"
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_5f577ea73a201": {
+                            "key": "layout_5f577ea73a201",
+                            "name": "section_team",
+                            "label": "Team section",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5f58cef5d17ea",
+                                    "label": "Section Info",
+                                    "name": "",
+                                    "type": "message",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "<ol><li>Specify one or more team members, individually, to display <strong><em>and\/or<\/em><\/strong><\/li><li>choose one or more \"teams\" to list all team members within that\/each respective program or group.<\/li><\/ol>\r\n\r\nDisplaying multiple programs or groups will output each group as a large button\/link that, when clicked, will reveal a block list of all people (members) in that group.",
+                                    "new_lines": "wpautop",
+                                    "esc_html": 0
+                                },
+                                {
+                                    "key": "field_5f57fbab44035",
+                                    "label": "Select an option",
+                                    "name": "team_option",
+                                    "type": "button_group",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "individual": "Individual",
+                                        "group": "Group"
+                                    },
+                                    "allow_null": 0,
+                                    "default_value": "",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_5f5bccd98aaf6",
+                                    "label": "Add a Team Group",
+                                    "name": "team_group",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5f57fbab44035",
+                                                "operator": "==",
+                                                "value": "group"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "row",
+                                    "button_label": "Add Group",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5f5bcd1b8aaf8",
+                                            "label": "Select program(s) to include as grouped lists of team members",
+                                            "name": "group_code",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": [],
+                                            "default_value": false,
+                                            "allow_null": 0,
+                                            "multiple": 0,
+                                            "ui": 0,
+                                            "return_format": "array",
+                                            "ajax": 0,
+                                            "placeholder": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_5f5bce4c8aafa",
+                                    "label": "Add a Team Member",
+                                    "name": "team_individual",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5f57fbab44035",
+                                                "operator": "==",
+                                                "value": "individual"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "row",
+                                    "button_label": "Add Team Member",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5f5bce8e8aafb",
+                                            "label": "People ID#",
+                                            "name": "member_id",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "min": "",
+                                            "max": "",
+                                            "step": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_5f22205016d92": {
+                            "key": "layout_5f22205016d92",
+                            "name": "section_content_slider",
+                            "label": "Slider or Banner Image",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5f222cd7f9f0e",
+                                    "label": "Upload Image(s)",
+                                    "name": "slider_upload",
+                                    "type": "gallery",
+                                    "instructions": "Upload images to automatically create and add a new slider to the homepage.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "insert": "append",
+                                    "library": "all",
+                                    "min": 1,
+                                    "max": "",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "button_label": "Add Some Content",
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "field_5f3be7635082a",
+                    "label": "note",
+                    "name": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Add more content to this section, add another section, or \"update\" to save your changes.",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "featured_image"
+    ],
+    "active": true,
+    "description": "Add sections of content to your homepage",
+    "modified": 1643326632
+}

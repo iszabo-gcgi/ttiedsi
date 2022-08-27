@@ -1,0 +1,174 @@
+// Main styles
+$font-family-body: franklin-gothic-urw, Open Sans, Helvetica, sans-serif;
+$font-family-heading: Oswald, franklin-gothic-urw, Helvetica, sans-serif;
+$font-family-open: "Open Sans", Helvetica, sans-serif;
+
+// Colors
+$grey_1: #f2f2f2;
+$grey_2: #fafafa;
+$grey_3: #ededed;
+$grey_4: #cccccc;
+$grey_5: #b3b3b3;
+$grey_6: #808080;
+$grey_7: #757575;
+$grey_8: #616161;
+$grey_9: #424242;
+$grey_10: #212121;
+$background-light-grey: #F0F0F0;
+$light-grey: #DDDDDD;
+
+$archive_title_grey: #707070;
+$archive_text_grey: #7b7b7b;
+$archive_meta_grey: #3d3d3d;
+
+$black: #000;
+$maroondark: #370000;
+
+// TAMU Brand Colors for Web
+// -- normal / darker / lighter
+$maroon: #500000;
+$maroonpop: #5d0025;
+$white: #fff;
+$blue: #003C71;
+$green: #5B6236;
+$teal: #4c8992;
+$brown: #744F28;
+$tan: #998542;
+$darkgrey: #332C2C;
+$grey: #bfbfc0;
+$greylt: #ededed;
+$lightgrey: #ededed;
+$offwhite: #D6D3C4;
+$accentyellow: #FCE300;
+$accentred: #E4002B;
+$yellow: #e1af21;
+
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+$colors: (
+  'maroon'      : $maroon,
+  'maroonpop'   : $maroonpop,
+  'white'       : $white,
+  'blue'        : $blue,
+  'green'       : $green,
+  'teal'        : $teal,
+  'brown'       : $brown,
+  'tan'         : $tan,
+  'black'       : $black,
+  'darkgrey'    : $darkgrey,
+  'grey'        : $grey,
+  'lightgrey'   : $greylt,
+  'yellow'      : $yellow,
+  'red'         : $accentred
+);
+
+$base-color: $black;
+$highlight: $maroonpop;
+$border-color: $grey_4;
+
+// Content
+$content-width: 1200px;
+$block-margin: 25px;
+
+// Grid
+$grid-width: 1224px;
+$grid-gap: 24px;
+$base-margin: 12px;
+$wrap_edge: $base-margin;
+$margin_2x: $base-margin * 2;
+$margin_4x: $base-margin * 4;
+
+$enable-transitions: true;
+$enable-shadows: true;
+$enable-rounded: true;
+$enable-gradients: false;
+
+$component-active-color:      $white !default;
+$component-active-bg:         $blue !default;
+$line-height-base:            1.5 !default;
+$line-height-lg:              1.5 !default;
+$line-height-sm:              1.5 !default;
+$border-width:                1px !default;
+$font-weight-normal:          400 !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+$border-radius:               .25rem !default;
+$border-radius-lg:            .3rem !default;
+$border-radius-sm:            .2rem !default;
+$yiq-contrasted-threshold:    150 !default;
+$yiq-text-dark:               $grey_9 !default;
+$yiq-text-light:              $white !default;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                $maroonpop !default;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:         .375rem !default;
+$input-btn-padding-x:         .75rem !default;
+$input-btn-line-height:       $line-height-base !default;
+$input-btn-focus-width:       .2rem !default;
+$input-btn-focus-color:       rgba($component-active-bg, .25) !default;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+$input-btn-padding-y-sm:      .25rem !default;
+$input-btn-padding-x-sm:      .5rem !default;
+$input-btn-line-height-sm:    $line-height-sm !default;
+$input-btn-padding-y-lg:      .5rem !default;
+$input-btn-padding-x-lg:      1rem !default;
+$input-btn-line-height-lg:    $line-height-lg !default;
+$input-btn-border-width:      $border-width !default;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y:               $input-btn-padding-y !default;
+$btn-padding-x:               $input-btn-padding-x !default;
+$btn-line-height:             $input-btn-line-height !default;
+$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
+$btn-line-height-sm:          $input-btn-line-height-sm !default;
+$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
+$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
+$btn-line-height-lg:          $input-btn-line-height-lg !default;
+$btn-border-width:            $input-btn-border-width !default;
+$btn-font-weight:             $font-weight-normal !default;
+$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$btn-focus-width:             $input-btn-focus-width !default;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
+$btn-disabled-opacity:        .65 !default;
+$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
+$btn-link-disabled-color:     $grey_6 !default;
+$btn-block-spacing-y:         .5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius !default;
+$btn-border-radius-lg:        $border-radius-lg !default;
+$btn-border-radius-sm:        $border-radius-sm !default;
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+
+// Include Media
+$breakpoints: (
+  'phone'  : 360px,
+  'small'  : 768px,
+  'tablet' : 768px, // required for include-media
+  'mobile_menu' : 768px,
+  'medium' : 992px,
+  'large'  : 1200px,
+  'desktop': $grid-width + $grid-gap, // required for include-media
+  'content-width': $content-width + $grid-gap,
+);
+
+@import "../vendor/_include-media";
+@import "../modules/helpers";
+@import "../modules/base-styles";
